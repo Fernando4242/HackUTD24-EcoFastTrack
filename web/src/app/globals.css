@@ -2,20 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 210 100% 98%; /* Soft baby blue background */
+    --foreground: 210 40% 20%;  /* Darker blue for text */
+    --card: 210 100% 97%; /* Lighter blue card background */
+    --card-foreground: 210 40% 20%; /* Dark blue text on card */
+    --popover: 210 100% 97%; /* Lighter blue for popover */
+    --popover-foreground: 210 40% 20%; /* Dark blue text on popover */
+    --primary: 210 100% 60%; /* Soft baby blue for primary elements */
+    --primary-foreground: 210 40% 98%; /* White text on primary */
+    --secondary: 210 100% 80%; /* Light pastel blue */
+    --secondary-foreground: 210 40% 20%; /* Dark text for secondary */
+    --muted: 210 100% 92%; /* Very light blue */
+    --muted-foreground: 210 40% 30%; /* Medium dark blue for muted text */
+    --accent: 210 100% 85%; /* Lightest baby blue accent */
+    --accent-foreground: 210 40% 20%; /* Dark blue text on accent */
+    --destructive: 0 100% 50%; /* Red for destructive actions */
+    --destructive-foreground: 210 40% 98%; /* White text for destructive */
+    --border: 210 40% 85%; /* Light border color */
+    --input: 210 40% 85%; /* Input background */
+    --ring: 210 100% 60%; /* Blue ring color */
+    --radius: 0.5rem;
+    --chart-1: 180 50% 60%; /* Soft teal */
+    --chart-2: 200 60% 50%; /* Muted blue */
+    --chart-3: 220 40% 40%; /* Deep blue */
+    --chart-4: 160 60% 55%; /* Light teal */
+    --chart-5: 100 70% 65%; /* Soft green */
+    --sidebar-background: 210 100% 95%; /* Very light blue for sidebar */
+    --sidebar-foreground: 210 40% 20%; /* Dark blue text in sidebar */
+    --sidebar-primary: 210 100% 90%; /* Very light blue sidebar primary */
+    --sidebar-primary-foreground: 210 40% 20%; /* Dark blue text on primary sidebar */
+    --sidebar-accent: 210 100% 80%; /* Soft accent color */
+    --sidebar-accent-foreground: 210 40% 20%; /* Dark text for accent in sidebar */
+    --sidebar-border: 210 40% 85%; /* Light blue border for sidebar */
+    --sidebar-ring: 210 100% 60%; /* Blue ring for sidebar */
+  }
+
+  .dark {
+    --background: 210 100% 10%; /* Dark blue background for dark mode */
+    --foreground: 210 40% 90%;  /* Light blue text for dark mode */
+    --card: 210 100% 12%; /* Darker card background */
+    --card-foreground: 210 40% 90%; /* Light text on card */
+    --popover: 210 100% 12%; /* Darker popover background */
+    --popover-foreground: 210 40% 90%; /* Light text on popover */
+    --primary: 210 100% 45%; /* Primary with more saturation */
+    --primary-foreground: 210 40% 98%; /* White text for primary in dark mode */
+    --secondary: 210 100% 50%; /* Darker secondary for contrast */
+    --secondary-foreground: 210 40% 90%; /* Lighter text for secondary */
+    --muted: 210 100% 30%; /* Darker muted color */
+    --muted-foreground: 210 40% 80%; /* Lighter muted text */
+    --accent: 210 100% 30%; /* Darker accent color */
+    --accent-foreground: 210 40% 90%; /* Light text on accent */
+    --destructive: 0 100% 50%; /* Destructive red remains same */
+    --destructive-foreground: 210 40% 98%; /* Light text for destructive */
+    --border: 210 40% 45%; /* Darker border for dark mode */
+    --input: 210 40% 45%; /* Darker input background */
+    --ring: 210 100% 50%; /* Ring color adjusted for dark mode */
+    --chart-1: 180 50% 50%; /* Teal chart color */
+    --chart-2: 200 60% 40%; /* Darker muted blue for charts */
+    --chart-3: 220 40% 30%; /* Deeper blue for chart */
+    --chart-4: 160 60% 45%; /* Soft teal chart */
+    --chart-5: 100 70% 60%; /* Light green for chart */
+    --sidebar-background: 210 100% 12%; /* Darker sidebar background */
+    --sidebar-foreground: 210 40% 90%; /* Light sidebar text */
+    --sidebar-primary: 210 100% 20%; /* Dark primary color for sidebar */
+    --sidebar-primary-foreground: 210 40% 98%; /* Light text on primary sidebar */
+    --sidebar-accent: 210 100% 30%; /* Darker sidebar accent */
+    --sidebar-accent-foreground: 210 40% 90%; /* Light text on accent sidebar */
+    --sidebar-border: 210 40% 45%; /* Dark border for sidebar */
+    --sidebar-ring: 210 100% 55%; /* Blue ring for sidebar in dark mode */
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
